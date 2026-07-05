@@ -1,0 +1,18 @@
+{
+  "name": "Janet Wong",
+  "firstName": "Janet",
+  "lastName": "Wong",
+  "email": "testApi01@mail.com",
+  "password": "Test12345!",
+  "dayDOB": "11",
+  "monthDOB": "July",
+  "yearDOB": "1993",
+  "address1": "40 Brooklands Rd",
+  "address2": "Apt 8",
+  "country": "United States",
+  "state": "Texas",
+  "city": "San",
+  "zipcode": "94882",
+  "mobileNumber": "5052421234"
+  
+}

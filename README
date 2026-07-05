@@ -1,0 +1,14 @@
+**Automation Test Scenario**
+
+After reviewing the website, I would prioritise these six journeys listed below.
+User Signup; because new account registration is the entry point of this platform. The platform cannot perform other journeys without the Signup.
+User Login and Logout; it sets up the authentication for the core functionality. It also likes User Signup. If it breaks, the platform cannot perform.
+Adding products to Cart; it relates to the revenue flow of the website. Gaining revenue from this website is the purpose of the platform.
+Placing Order and Checkout; this is the most critical workflow of the platform. If there is any defect, it would directly impact the business.
+Searching Product; users can use this function to find products easier. It can improve the user experience. Also, it covers the tests for search input and result rendering.
+Contact Us Form; although it is less important compared with other five journeys, the form submission gives the customers a communication channel. It improves the company’s image.
+
+I would pick User Signup, User Login and Logout, Adding products to Cart and Placing Order and Checkout. These four journeys form the core end to end user flow. Placing Order and Checkout is the whole point of the platform, and the other three are the prerequisites for checkout. If one of these three journeys breaks in a release, it affects the core business. Also, Adding products to Cart and Placing Order and Checkout are the most likely to be affected when the backend changes. So, they are the strong candidates for regression tests.
+
+I used Cypress and Javascript, because I used Cypress automation for the regression testing the time at AETOS Group. And Cypress is easy to set up and maintain, so we got more time for other manual test cases. 
+And Cypress also suits this project well, because it’s fast to setup, runs in the browser. The error messages and DOM snapshots would make the debugging easier. 

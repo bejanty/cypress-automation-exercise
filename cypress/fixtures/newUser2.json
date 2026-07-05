@@ -1,0 +1,17 @@
+{
+  "name": "Ken Pan",
+  "firstName": "Ken",
+  "lastName": "Pan",
+  "password": "Test12345!",
+  "dayDOB": "15",
+  "monthDOB": "May",
+  "yearDOB": "1998",
+  "address1": "278 Mayland Rd",
+  "address2": "Flat 1",
+  "country": "United States",
+  "state": "California",
+  "city": "San Francisco",
+  "zipcode": "94133",
+  "mobileNumber": "5052428787"
+  
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Men Tshirt",
+        "price": "Rs. 400",
+        "quantity": "1",
+        "total": "Rs. 400"
+    },
+    {
+        "name": "Stylish Dress",
+        "price": "Rs. 1500",
+        "quantity": "1",
+        "total": "Rs. 1500"
+    },
+    {
+        "name": "Madame Top For Women",
+        "price": "Rs. 1000",
+        "quantity": "1",
+        "total": "Rs. 1000"
+    },
+    {
+        "name": "Little Girls Mr. Panda Shirt",
+        "price": "Rs. 1200",
+        "quantity": "1",
+        "total": "Rs. 1200"
+    }
+]
