@@ -9,12 +9,13 @@ describe ('User Login', () =>{
             homePage_PO.visit();
             homePage_PO.goToLogin();
             cy.wait(500);
+            //Fill Login details
             loginPage_PO.enterLoginEmail(user.email);
             loginPage_PO.enterLoginPassword(user.password);
             loginPage_PO.clickLogin();
             cy.wait(1000);
 
-            //Check the login status exists
+            //Check if the login status exists
             cy.contains('Logged in as').should('be.visible');
         })
     })
@@ -24,6 +25,7 @@ describe ('User Login', () =>{
             homePage_PO.visit();
             homePage_PO.goToLogin();
             cy.wait(500);
+            //Fill Login details
             loginPage_PO.enterLoginEmail(user.loginEmail);
             loginPage_PO.enterLoginPassword(user.loginPassword);
             loginPage_PO.clickLogin();
@@ -40,6 +42,7 @@ describe ('User Login', () =>{
             homePage_PO.visit();
             homePage_PO.goToLogin();
             cy.wait(500);
+             //Fill Login details           
             loginPage_PO.enterLoginEmail("test.88@mail.com");
             loginPage_PO.enterLoginPassword(user.password);
             loginPage_PO.clickLogin();
