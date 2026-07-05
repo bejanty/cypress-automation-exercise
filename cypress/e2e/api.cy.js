@@ -33,8 +33,8 @@ describe('API Testing', () =>{
 
     it('POST To Verify Login with valid details', () =>{
         cy.fixture("apiUser").then((user) =>{
-            //Debug undefined problem in response body
-            const parseBody = (body) =>
+            //Debugging undefined problem from response body
+            const responseMessage = (body) =>
                 typeof body === 'string' ? JSON.parse(body): body;
 
             cy.request({
@@ -46,7 +46,7 @@ describe('API Testing', () =>{
                     password: user.password
                 }
             }).then((response) => {
-                const body = parseBody(response.body);
+                const body = responseMessage(response.body);
                 //cy.log(JSON.stringify(body));
 
                 expect(body.responseCode).to.eq(200);
@@ -59,7 +59,7 @@ describe('API Testing', () =>{
         cy.clearCookies();
 
         cy.fixture("apiUser").then((user) =>{
-            const parseBody = (body) =>
+            const responseMessage = (body) =>
             typeof body === 'string' ? JSON.parse(body): body;
 
             cy.request({
@@ -73,7 +73,7 @@ describe('API Testing', () =>{
                 failOnStatusCode: false,
             }).
             then((response) => {
-                const body = parseBody(response.body);
+                const body = responseMessage(response.body);
                 expect(response.status).to.eq(200);
                 expect(body.responseCode).to.eq(404);
                 expect(body.message).to.eq('User not found!');
@@ -83,7 +83,7 @@ describe('API Testing', () =>{
 
     it('GET user account detail by email', () =>{
         cy.fixture("apiUser").then((user) =>{
-            const parseBody = (body) =>
+            const responseMessage = (body) =>
             typeof body === 'string' ? JSON.parse(body): body;
 
             cy.request({
@@ -94,7 +94,7 @@ describe('API Testing', () =>{
                 },
             })
             .then((response) => {
-                const body = parseBody(response.body);
+                const body = responseMessage(response.body);
                 expect(response.status).to.eq(200);
                 expect(body.responseCode).to.eq(200);
                 expect(body.user.email).to.eq(user.email);
@@ -105,7 +105,7 @@ describe('API Testing', () =>{
 
     it('PUT METHOD To Update User Account', () =>{
         cy.fixture("apiUser").then((user) =>{
-            const parseBody = (body) =>
+            const responseMessage = (body) =>
             typeof body === 'string' ? JSON.parse(body): body;
 
             cy.request({
@@ -129,7 +129,7 @@ describe('API Testing', () =>{
                       mobile_number: user.mobileNumber
                 },
             }).then((response) => {
-                const body = parseBody(response.body);
+                const body = responseMessage(response.body);
                 expect(response.status).to.eq(200);
                 expect(body.responseCode).to.eq(200);
                 expect(body.message).to.eq('User updated!');
@@ -140,7 +140,7 @@ describe('API Testing', () =>{
     after(()=>{
         //DELETE METHOD To Delete User Account
         cy.fixture("apiUser").then((user) =>{
-            const parseBody = (body) =>
+            const responseMessage = (body) =>
             typeof body === 'string' ? JSON.parse(body): body;
 
             cy.request({
@@ -154,7 +154,7 @@ describe('API Testing', () =>{
                 },
 
             }).then((response) =>{
-                const body = parseBody(response.body);
+                const body = responseMessage(response.body);
                 expect(response.status).to.eq(200);
                 expect(body.responseCode).to.eq(200);
                 expect(body.message).to.eq('Account deleted!');

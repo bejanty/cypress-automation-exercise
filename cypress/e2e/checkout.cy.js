@@ -22,7 +22,7 @@ describe('Checkout and Place Order', () =>{
         cy.url().should('include', '/view_cart');
         cartPage_PO.proceedToCheckout();
 
-        //Check the pop up message
+        //Check the pop up message after clicking checkout
         cy.get('.modal-title').should('have.text', 'Checkout');
         cy.get('.modal-body > p').first().should('have.text', 'Register / Login account to proceed on checkout.');
         cy.get('.modal-body a').should('have.attr','href', '/login');
@@ -32,7 +32,7 @@ describe('Checkout and Place Order', () =>{
         
     })
 
-    it('Login before Checkout', ()=> {
+    it('Login Account before Checkout', ()=> {
         cy.fixture('payment').then((payment) =>{
             cy.fixture('validCredential').then((user) =>{
                 homePage_PO.visit();
