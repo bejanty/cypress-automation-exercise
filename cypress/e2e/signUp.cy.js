@@ -75,7 +75,7 @@ describe("User Sign Up",() => {
         })
     })
 
-    //Check other required fields
+    //Check other required fields - first name, last name, addres, state, city zipcode and mobile number
     const requiredFields = [
         {name: 'First name', selector: '#first_name'},
         {name: 'Last name', selector: '#last_name'},
@@ -86,6 +86,7 @@ describe("User Sign Up",() => {
         {name: 'Mobile Number', selector: '#mobile_number'}
     ]
 
+    //loop for each field
     requiredFields.forEach(({name,selector}) =>{
         it(`Required field - Check the error on the ${name} field`, () => {
             cy.fixture("newUser").then((user) =>{
@@ -109,6 +110,7 @@ describe("User Sign Up",() => {
         })
     })
 
+    
     it('Register User with existing email', () =>{
         cy.fixture('validCredential').then((user) =>{
             homePage_PO.visit();
